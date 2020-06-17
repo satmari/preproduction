@@ -19,6 +19,11 @@ Route::get('operator_login', 'LoginOperatorController@index');
 Route::post('login_operator','LoginOperatorController@login_operator');
 Route::get('table_operator', 'LoginOperatorController@table_operator');
 
+// Activity
+Route::get('activity', 'ActivityController@index');
+Route::get('add_activity','ActivityController@add_activity');
+Route::post('insert_activity', 'ActivityController@insert_activity');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
