@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Cutting Operator</title>
+	<title>Operator App</title>
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 	<!-- <link href="{{ asset('/css/css.css') }}" rel="stylesheet"> -->
@@ -27,15 +27,34 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ url('/') }}">Cutting Operator App</a>
+				<a class="navbar-brand" href="{{ url('/') }}">Operator App</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					{{-- <li><a href="{{ url('/') }}">Home</a></li> --}}
-					<li><a href="{{ url('operator_login/') }}">Prijava Operatera</a></li>
-					<li><a href="{{ url('table_operator') }}">Tabela registracija</a></li>
-					<li><a href="{{ url('activity') }}">Tabela aktivnosti</a></li>
+					<a class="navbar-brand" href="#">|</a>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="" style="color:blue"><big><b>&nbsp;&nbsp;&nbsp; Cutting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></big></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="{{ url('operator_login/') }}"><span style="color:blue">Prijava Operatera</span></a></li>
+							<li><a href="{{ url('table_operator') }}"><span style="color:blue">Tabela registracija</span></a></li>
+							<li><a href="{{ url('activity') }}"><span style="color:blue">Tabela aktivnosti</span></a></li>		
+							
+						</ul>
+					</li>
+					<a class="navbar-brand" href="#">|</a>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="" style="color:red"><big><b>Preproduction &nbsp;&nbsp;&nbsp;</b></big></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="{{ url('preproduction_login') }}"><span style="color:red">Prijava / LogIN</span></a></li>
+							<li><a href="{{ url('preproduction_logout') }}"><span style="color:red">Odjava / LogOUT</span></a></li>
+							<li><a href="{{ url('table_preproduction') }}"><span style="color:red">Tabela registracija</span></a></li>
+						</ul>
+					</li>
+					<a class="navbar-brand" href="#">|</a>
+					
+					
+					
 				</ul>
 
 				{{-- 

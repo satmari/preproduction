@@ -5,7 +5,7 @@
 	<div class="row vertical-center-row">
 		<div class="text-center col-md-8 col-md-offset-2">
 			<div class="panel panel-default"> 
-				<div class="panel-heading">Tabela registracija (prikazano poslednjih 30 dana)</div>
+				<div class="panel-heading" style="background-color: #b3b5ff;"><span style="color:blue">Tabela Cutting registracija (prikazano poslednjih 30 dana) </span></div>
 				
 				<br>
                 <div class="input-group"> <span class="input-group-addon">Filter</span>

@@ -6,8 +6,8 @@
     <div class="row vertical-center-row">
         <div class="text-center col-md-4 col-md-offset-4">
             <div class="panel panel-default">
-				<div class="panel-heading">Prijava operatera</div>
-				<br>
+				<div class="panel-heading" style="background-color: #b3b5ff;"><span style="color:blue">Prijava Cutting operatera</span></div>
+				
 					{!! Form::open(['method'=>'POST', 'url'=>'/login_operator']) !!}
 
 						<div class="panel-body">

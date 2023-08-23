@@ -5,7 +5,7 @@
 	<div class="row vertical-center-row">
 		<div class="text-center col-md-5 col-md-offset-4">
 			<div class="panel panel-default">
-				<div class="panel-heading"><b>Add Activity</b></div>
+				<div class="panel-heading" style='background-color: #b3b5ff'><b>Add Activity</b></div>
 				
 				{!! Form::open(['url' => 'insert_activity']) !!}
 				<input type="hidden" name="_token" id="_token" value="<?php echo csrf_token(); ?>">

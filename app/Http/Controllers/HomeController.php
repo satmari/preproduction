@@ -36,8 +36,8 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		// return view('home');
-		return Redirect::to('operator_login');
+		return view('home');
+		// return Redirect::to('operator_login');
 		
 	}
 
