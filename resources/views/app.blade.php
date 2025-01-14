@@ -38,7 +38,7 @@
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="{{ url('operator_login/') }}"><span style="color:blue">Prijava Operatera</span></a></li>
 							<li><a href="{{ url('table_operator') }}"><span style="color:blue">Tabela registracija</span></a></li>
-							<li><a href="{{ url('activity') }}"><span style="color:blue">Tabela aktivnosti</span></a></li>		
+							<li><a href="{{ url('activity') }}"><span style="color:blue">Tabela aktivnosti</span></a></li>
 							
 						</ul>
 					</li>
@@ -52,6 +52,16 @@
 						</ul>
 					</li>
 					<a class="navbar-brand" href="#">|</a>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="" style="color:yellow"><big><b>NEW LOGIN (TEST)&nbsp;&nbsp;&nbsp;</b></big></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="{{ url('operator_login_new') }}"><span style="color:yellow">Prijava / Log IN</span></a></li>
+							<li><a href="{{ url('operator_change_new') }}"><span style="color:yellow">Promena aktivnosti / Change activity</span></a></li>
+							<li><a href="{{ url('operator_logout_new') }}"><span style="color:yellow">Odjava / Log OUT</span></a></li>
+
+							<li><a href="{{ url('table_operator_new') }}"><span style="color:yellow">Tabela aktivnih registracija</span></a></li>
+						</ul>
+					</li>
 					
 					
 					

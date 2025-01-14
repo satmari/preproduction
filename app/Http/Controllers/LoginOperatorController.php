@@ -19,7 +19,6 @@ class LoginOperatorController extends Controller {
 		//
 		// dd("test");
 		
-		
 		$activity = DB::connection('sqlsrv')->select(DB::raw("SELECT activity_desc FROM activity ORDER BY id asc"));
 		$activity = (object) $activity;
 		// dd($activity);
@@ -46,7 +45,7 @@ class LoginOperatorController extends Controller {
 	
 		$rnumber = strtoupper($input['rnumber']);
 		$activity_desc = $input['activity'];
-		// dd($activity);
+		// dd($activity_desc);
 
 		if ($activity_desc == "0") {
 			$activity = DB::connection('sqlsrv')->select(DB::raw("SELECT activity_desc FROM activity ORDER BY id asc"));
@@ -55,6 +54,7 @@ class LoginOperatorController extends Controller {
 			$msg1 = 'problem';
 			return view('OpLogin.index' , compact('activity', 'msg1'));
 		}
+
 		if ($rnumber == "") {
 			$activity = DB::connection('sqlsrv')->select(DB::raw("SELECT activity_desc FROM activity ORDER BY id asc"));
 			$activity = (object) $activity;
@@ -62,18 +62,21 @@ class LoginOperatorController extends Controller {
 			$msg2 = 'problem';
 			return view('OpLogin.index' , compact('activity', 'msg2'));
 		}
-			
+		// $activity = DB::connection('sqlsrv')->select(DB::raw("SELECT activity_desc FROM activity ORDER BY id asc"));
+		// dd($activity);
 		
 		$inteos = DB::connection('sqlsrv1')->select(DB::raw("SELECT Name FROM BdkCLZG.dbo.WEA_PersData WHERE BadgeNum = :somevariable
 				 "), array(
 				'somevariable' => $rnumber,
 		));
-
 		// dd($inteos);
+		// dd($activity_desc);
 		
 		if (isset($inteos[0]->Name)) {
 
-			$activity = DB::connection('sqlsrv')->select(DB::raw("SELECT id FROM activity WHERE activity_desc = '".$activity_desc."' "));
+			// dd('set');
+			$activity = DB::connection('sqlsrv')->select(DB::raw("SELECT * FROM activity WHERE activity_desc COLLATE Latin1_General_CI_AI = '".$activity_desc."' "));
+			// dd($activity);
 			// dd($activity[0]->id);
 			// dd($rnumber);
 
