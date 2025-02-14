@@ -1,5 +1,11 @@
 <?php namespace App\Http\Controllers;
 
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
+
+use Illuminate\Http\Request;
+
 class HomeController extends Controller {
 
 	/*
@@ -31,6 +37,8 @@ class HomeController extends Controller {
 	public function index()
 	{
 		return view('home');
+		// return Redirect::to('operator_login');
+		
 	}
 
 }

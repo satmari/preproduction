@@ -5,7 +5,7 @@
 	<div class="row vertical-center-row">
 		<div class="text-center col-md-8 col-md-offset-2">
 			<div class="panel panel-default"> 
-				<div class="panel-heading" style="background-color: #b3b5ff;"><span style="color:blue">Tabela Cutting registracija (prikazano poslednjih 30 dana) </span></div>
+				<div class="panel-heading" style="background-color:#f3afaf"><span style="color:red">Tabela Preproduction registracija (prikazano poslednjih 30 dana) </span></div>
 				
 				<br>
                 <div class="input-group"> <span class="input-group-addon">Filter</span>
@@ -42,11 +42,14 @@
 				        <tr>
 				           {{-- <th>id</th> --}}
 				           <th data-sortable="true">Datum prijave</th>
+				           <th data-sortable="true">Datum odjave</th>
 				           <th data-sortable="true">R Number</th>
 				           <th >Operater</th>
-				           <th data-sortable="true">Aktivnost</th>	
-				           <th>Created at</th>
+				           <th >Smena</th>
+				           <th>Odsutnost [min]</th>
+				           <th>Ukupno vreme [min]</th>
 				           
+						   <th></th>   
 				        </tr>
 				    </thead>
 				    <tbody class="searchable">
@@ -56,11 +59,20 @@
 				        <tr>
 				        	{{-- <td>{{ $d->id }}</td> --}}
 				        	<td>{{ Carbon\Carbon::parse($d->login_date)->format('d.m.Y H:i:s') }}</td>
+				        	@if (isset($d->logout_date))
+				        	<td>{{ Carbon\Carbon::parse($d->logout_date)->format('d.m.Y H:i:s') }}</td>
+				        	@else
+				        	<td>{{ $d->logout_date }}</td>
+				        	@endif
 				        	<td>{{ $d->rnumber }}</td>
 				        	<td>{{ $d->operator }}</td>
-				        	<td>{{ $d->activity_desc}}</td>
-				        	<td>{{ $d->created_at}}</td>
-
+				        	<td>{{ $d->shift }}</td>
+				        	<td>{{ round($d->downtime,0) }}</td>
+				        	<td>{{ round($d->total_time,0) }}</td>
+				        	
+				        	<td>
+				        		<a href="{{ url('/edit_line/'.$d->id) }}" class="btn btn-info btn-xs ">Edit</a>
+				        	</td>
 						</tr>
 				    
 				    @endforeach

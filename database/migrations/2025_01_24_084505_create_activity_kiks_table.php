@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLoginOperatorsTable extends Migration {
+class CreateActivityKiksTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,18 +12,13 @@ class CreateLoginOperatorsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('login_operators', function(Blueprint $table)
+		Schema::create('activity_kik', function(Blueprint $table)
 		{
 			$table->increments('id');
 
-			$table->string('rnumber');
-			$table->string('operator');
-			$table->dateTime('login_date');
-			
-			$table->string('activity_id');
 			$table->string('activity_desc');
+			$table->string('activity_desc1');
 			
-
 			$table->timestamps();
 		});
 	}
@@ -35,8 +30,7 @@ class CreateLoginOperatorsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('login_operators');
+		Schema::drop('activity_kik');
 	}
 
 }
-

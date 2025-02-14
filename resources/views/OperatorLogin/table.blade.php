@@ -5,7 +5,7 @@
 	<div class="row vertical-center-row">
 		<div class="text-center col-md-8 col-md-offset-2">
 			<div class="panel panel-default"> 
-				<div class="panel-heading" style="background-color: #b3b5ff;"><span style="color:blue">Tabela Cutting registracija (prikazano poslednjih 30 dana) </span></div>
+				<div class="panel-heading" style="background-color: #b3f700;"><span style="color:blue">Tabela Cutting registracija (prikazano poslednjih 30 dana) </span></div>
 				
 				<br>
                 <div class="input-group"> <span class="input-group-addon">Filter</span>
@@ -42,10 +42,18 @@
 				        <tr>
 				           {{-- <th>id</th> --}}
 				           <th data-sortable="true">Datum prijave</th>
+				           <th data-sortable="true">Smena</th>
+				           
 				           <th data-sortable="true">R Number</th>
 				           <th >Operater</th>
 				           <th data-sortable="true">Aktivnost</th>	
-				           <th>Created at</th>
+				           <th>Vreme prijave</th>
+				           <th>Vreme odjave</th>
+				           <th>Razlog ili nacin odjave</th>
+
+				           <th data-sortable="true">od</th>
+				           <th data-sortable="true">do</th>
+
 				           
 				        </tr>
 				    </thead>
@@ -55,11 +63,21 @@
 				    	
 				        <tr>
 				        	{{-- <td>{{ $d->id }}</td> --}}
-				        	<td>{{ Carbon\Carbon::parse($d->login_date)->format('d.m.Y H:i:s') }}</td>
+				        	<td>{{ substr($d->login_date,0,10) }}</td>
+				        	<td>{{ $d->shift_name }}</td>
+				        	
 				        	<td>{{ $d->rnumber }}</td>
 				        	<td>{{ $d->operator }}</td>
 				        	<td>{{ $d->activity_desc}}</td>
-				        	<td>{{ $d->created_at}}</td>
+
+				        	<td>{{ substr($d->login_actual,0,19) }}</td>
+				        	<td>{{ substr($d->logout_actual,0,19) }}</td>
+
+				        	<td>{{ $d->logout_motivation}}</td>
+
+				        	<td>{{ substr($d->shift_start,11,5) }}</td>
+				        	<td>{{ substr($d->shift_end,  11,5) }}</td>
+
 
 						</tr>
 				    

@@ -3,15 +3,17 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row vertical-center-row">
-		<div class="text-center col-md-8 col-md-offset-2">
-			<div class="panel panel-default"> 
-				<div class="panel-heading" style="background-color: #b3b5ff;"><span style="color:blue">Tabela Cutting registracija (prikazano poslednjih 30 dana) </span></div>
+		<div class="text-center col-md-5 col-md-offset-4">
+			<div class="panel panel-default">
+				<div class="panel-heading" style="background-color: #b8ffb3;"><span style="color:blue">Activity table (KIK)</span></div>
+
 				
-				<br>
+					<a href="{{ url('add_activity_kik') }}" class="btn btn-info btn-xs ">Add new activity</a>
+				
+
                 <div class="input-group"> <span class="input-group-addon">Filter</span>
                     <input id="filter" type="text" class="form-control" placeholder="Type here...">
                 </div>
-
                 <table class="table table-striped table-bordered" id="sort" 
                 data-show-export="true"
                 data-export-types="['excel']"
@@ -41,12 +43,11 @@
 				    <thead>
 				        <tr>
 				           {{-- <th>id</th> --}}
-				           <th data-sortable="true">Datum prijave</th>
-				           <th data-sortable="true">R Number</th>
-				           <th >Operater</th>
-				           <th data-sortable="true">Aktivnost</th>	
-				           <th>Created at</th>
 				           
+				           <th>Activity</th>
+				           <th>Activity [EN]</th>
+				           				           
+				          
 				        </tr>
 				    </thead>
 				    <tbody class="searchable">
@@ -55,12 +56,11 @@
 				    	
 				        <tr>
 				        	{{-- <td>{{ $d->id }}</td> --}}
-				        	<td>{{ Carbon\Carbon::parse($d->login_date)->format('d.m.Y H:i:s') }}</td>
-				        	<td>{{ $d->rnumber }}</td>
-				        	<td>{{ $d->operator }}</td>
-				        	<td>{{ $d->activity_desc}}</td>
-				        	<td>{{ $d->created_at}}</td>
-
+				        	
+				        	<td>{{ $d->activity_desc }} </td>
+				        	<td>{{ $d->activity_desc1 }} </td>
+				        					        	
+				        	
 						</tr>
 				    
 				    @endforeach
