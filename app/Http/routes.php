@@ -15,21 +15,26 @@
 Route::get('/', 'HomeController@index');
 
 // LoginOperatorController
-Route::get('operator_login', 'LoginOperatorController@index');
-Route::post('login_operator','LoginOperatorController@login_operator');
+// Route::get('operator_login', 'LoginOperatorController@index');
+// Route::post('login_operator','LoginOperatorController@login_operator');
 Route::get('table_operator', 'LoginOperatorController@table_operator');
 
 // Operator Login new
 Route::get('operator_login_new', 'OperatorLoginController@login');
 Route::post('operator_login_new_post','OperatorLoginController@operator_login_new_post');
-
 Route::get('operator_change_new', 'OperatorLoginController@change');
 Route::post('operator_change_new_post','OperatorLoginController@operator_change_new_post');
-
 Route::get('operator_logout_new', 'OperatorLoginController@logout');
 Route::post('operator_logout_new_post','OperatorLoginController@operator_logout_new_post');
-
 Route::get('table_operator_new', 'OperatorLoginController@table_operator_new');
+
+Route::get('operator_login_new_kik', 'OperatorLoginController@login_kik');
+Route::post('operator_login_new_post_kik','OperatorLoginController@operator_login_new_post_kik');
+Route::get('operator_change_new_kik', 'OperatorLoginController@change_kik');
+Route::post('operator_change_new_post_kik','OperatorLoginController@operator_change_new_post_kik');
+Route::get('operator_logout_new_kik', 'OperatorLoginController@logout_kik');
+Route::post('operator_logout_new_post_kik','OperatorLoginController@operator_logout_new_post_kik');
+Route::get('table_operator_new_kik', 'OperatorLoginController@table_operator_new_kik');
 
 // LoginPreproductionController
 Route::get('preproduction_login', 'LoginPreproductionController@preproduction_login');
@@ -50,6 +55,10 @@ Route::post('remove_line_post','LoginPreproductionController@remove_line_post');
 Route::get('activity', 'ActivityController@index');
 Route::get('add_activity','ActivityController@add_activity');
 Route::post('insert_activity', 'ActivityController@insert_activity');
+
+Route::get('activity_kik', 'ActivityController@index_kik');
+Route::get('add_activity_kik','ActivityController@add_activity_kik');
+Route::post('insert_activity_kik', 'ActivityController@insert_activity_kik');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

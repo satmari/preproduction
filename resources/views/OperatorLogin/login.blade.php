@@ -6,7 +6,7 @@
     <div class="row vertical-center-row">
         <div class="text-center col-md-4 col-md-offset-4">
             <div class="panel panel-default">
-				<div class="panel-heading" style="background-color: #b3b5ff;"><span style="color:reen">Prijava Cutting operatera</span>
+				<div class="panel-heading" style="background-color: #b3b5ff;"><span style="color:black">Prijava Cutting operatera</span>
 				<p><br>
 						<a href="{{ url('operator_login_new') }}" class="btn btn-info btn-xs ">Prijava</a>
 						<a href="{{ url('operator_change_new') }}" class="btn btn-warning btn-xs ">Promena</a>
@@ -38,31 +38,20 @@
 					{!! Form::close() !!}
 
 						<hr>
-		                  @if (isset($msg1))
-		                 <div class="panel-body">
-		                    <p style="color:red;"><b>{{ $msg1 }}</b></p>
-		                 </div>
-		                 @endif
+		                 
+		              
 
-		                 @if (isset($msg2))
-		                 <div class="panel-body">
-		                    <p style="color:red;"><b>{{ $msg2 }}</b></p>
-		                 </div>
-		                 @endif
+		                @if (isset($msg3))
+		                <div class="panel-body">
+                    		<p style="color:red;"><b>{{ $msg3 }}</b></p>
+                 		</div>
+		                @endif
 
-		                 @if (isset($msg3))
-		                 <div class="panel-body">
-		                    <p style="color:red;"><b>{{ $msg3 }}</b></p>
-		                 </div>
-		                 @endif
-
-		                 @if (isset($msg4))
-		                 <div class="panel-body">
-		                    <p style="color:green;"><b>{{ $msg4 }}</b></p>
-		                 </div>
-		                 @endif
-				
-				
+		                @if (isset($msg4))
+		                <div class="panel-body">
+		                   <p style="color:green;"><b>{{ $msg4 }}</b></p>
+		                </div>
+		                @endif
 		</div>
 	</div>
 </div>

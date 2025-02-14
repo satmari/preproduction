@@ -6,23 +6,22 @@
     <div class="row vertical-center-row">
         <div class="text-center col-md-4 col-md-offset-4">
             <div class="panel panel-default">
-				<div class="panel-heading" style="background-color: #c9302c;"><span style="color:black">Odjava Cutting operatera</span>
+				<div class="panel-heading" style="background-color: #d7f04e;"><span style="color:black">Promena aktivnosti Preproduction (KIK) operatera</span>
 					<p><br>
-						<a href="{{ url('operator_login_new') }}" class="btn btn-info btn-xs ">Prijava</a>
-						<a href="{{ url('operator_change_new') }}" class="btn btn-warning btn-xs ">Promena</a>
-						<a href="{{ url('operator_logout_new') }}" class="btn btn-danger btn-xs ">Odjava</a>
+						<a href="{{ url('operator_login_new_kik') }}" class="btn btn-info btn-xs ">Prijava</a>
+						<!-- <a href="{{ url('operator_change_new_kik') }}" class="btn btn-warning btn-xs ">Promena</a> -->
+						<a href="{{ url('operator_logout_new_kik') }}" class="btn btn-danger btn-xs ">Odjava</a>
 					</p></div>
 				
-					{!! Form::open(['method'=>'POST', 'url'=>'/operator_logout_new_post']) !!}
+					{!! Form::open(['method'=>'POST', 'url'=>'operator_change_new_post_kik']) !!}
 
 						<div class="panel-body">
-							<p>Izabrati razlog odjave:</p>
-						<select name="logout_motivation" class="form-control" class="autofocus">
+							<p>Izabrati aktivnost:</p>
+						<select name="activity" class="form-control" class="autofocus">
 		                	<option value="0"></option>
-		                   	<option value="Leave from work">Odlazak sa posla</option>
-		                   	<option value="Move to WH">Premestanje u drugi departman - magacin</option>
-		                   	<option value="Move to PROD">Premestanje u drugi departman - proizvodnja</option>
-		                   	
+		                    @foreach ($activity as $line)
+		                    <option value="{{ $line->id }}">{{ $line->activity_desc }}</option>
+		                    @endforeach
 		                </select>
 		            	</div>
 
@@ -30,6 +29,8 @@
 						<p>Skenirati barkod sa kartice operatera (R broj zaposlenog): </p>
 							{!! Form::text('rnumber', null, ['class' => 'form-control']) !!}
 						</div>
+						
+						
 						<br>
 						
 						{!! Form::submit('Snimi', ['class' => 'btn  btn-success center-block']) !!}
@@ -37,15 +38,13 @@
 						@include('errors.list')
 
 					{!! Form::close() !!}
-						
+
 						<hr>
-
-		                
-
+		                 
 		                @if (isset($msg3))
 		                <div class="panel-body">
-                    		<p style="color:red;"><b>{{ $msg3 }}</b></p>
-                 		</div>
+		                   <p style="color:red;"><b>{{ $msg3 }}</b></p>
+		                </div>
 		                @endif
 
 		                @if (isset($msg4))
@@ -53,6 +52,7 @@
 		                   <p style="color:green;"><b>{{ $msg4 }}</b></p>
 		                </div>
 		                @endif
+				
 				
 		</div>
 	</div>
