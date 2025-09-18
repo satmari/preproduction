@@ -6,14 +6,14 @@
     <div class="row vertical-center-row">
         <div class="text-center col-md-4 col-md-offset-4">
             <div class="panel panel-default">
-				<div class="panel-heading" style="background-color: #2cc95c;"><span style="color:black">Prijava Preproduction (KIK) operatera</span>
+				<div class="panel-heading" style="background-color: Aqua"><span style="color:blue">Prijava Warehouse (SU) operatera</span>
 				<p><br>
-						<a href="{{ url('operator_login_new_kik') }}" class="btn btn-info btn-xs ">Prijava</a>
-						<!-- <a href="{{ url('operator_change_new_kik') }}" class="btn btn-warning btn-xs ">Promena</a> -->
-						<a href="{{ url('operator_logout_new_kik') }}" class="btn btn-danger btn-xs ">Odjava</a>
+						<a href="{{ url('operator_login_new_wh') }}" class="btn btn-info btn-xs ">Prijava</a>
+						<a href="{{ url('operator_change_new_wh') }}" class="btn btn-warning btn-xs ">Promena</a>
+						<a href="{{ url('operator_logout_new_wh') }}" class="btn btn-danger btn-xs ">Odjava</a>
 					</p></div>
 				
-					{!! Form::open(['method'=>'POST', 'url'=>'operator_login_new_post_kik']) !!}
+					{!! Form::open(['method'=>'POST', 'url'=>'operator_login_new_post_wh']) !!}
 
 						<div class="panel-body">
 							<p>Izabrati aktivnost:</p>

@@ -10,6 +10,8 @@ use Carbon\Carbon;
 
 use App\login_operator;
 use App\activity;
+use App\activity_kik;
+use App\activity_wh;
 use DB;
 
 class ActivityController extends Controller {
@@ -88,6 +90,45 @@ class ActivityController extends Controller {
 		}
 
 		return Redirect::to('/activity_kik');
+
+
+	}
+
+	public function index_wh()
+	{
+		//
+		// dd("test");
+
+		$data = DB::connection('sqlsrv')->select(DB::raw("SELECT * FROM activity_wh ORDER BY id"));
+		return view('Activity.index_wh', compact('data'));
+	}
+
+	public function add_activity_wh () {
+		//
+		// dd("test");
+		return view('Activity.add_activity_wh');
+	}
+
+	public function insert_activity_wh (Request $request) {
+		
+		//
+		$this->validate($request, ['activity_desc' => 'required']);
+		$input = $request->all();
+		
+		try {
+			$table = new activity_wh;
+
+			$table->activity_desc = $input['activity_desc'];
+			$table->activity_desc1 = $input['activity_desc1'];
+									
+			$table->save();
+		}
+		catch (\Illuminate\Database\QueryException $e) {
+			$msg = "Problem to save in activity table";
+			return view('Activity.error_wh',compact('msg'));
+		}
+
+		return Redirect::to('/activity_wh');
 
 
 	}

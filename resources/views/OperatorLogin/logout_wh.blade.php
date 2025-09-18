@@ -6,22 +6,23 @@
     <div class="row vertical-center-row">
         <div class="text-center col-md-4 col-md-offset-4">
             <div class="panel panel-default">
-				<div class="panel-heading" style="background-color: #2cc95c;"><span style="color:black">Prijava Preproduction (KIK) operatera</span>
-				<p><br>
-						<a href="{{ url('operator_login_new_kik') }}" class="btn btn-info btn-xs ">Prijava</a>
-						<!-- <a href="{{ url('operator_change_new_kik') }}" class="btn btn-warning btn-xs ">Promena</a> -->
-						<a href="{{ url('operator_logout_new_kik') }}" class="btn btn-danger btn-xs ">Odjava</a>
+				<div class="panel-heading" style="background-color: Aqua"><span style="color:blue">Odjava Warehouse (SU) operatera</span>
+					<p><br>
+						<a href="{{ url('operator_login_new_wh') }}" class="btn btn-info btn-xs ">Prijava</a>
+						<a href="{{ url('operator_change_new_wh') }}" class="btn btn-warning btn-xs ">Promena</a>
+						<a href="{{ url('operator_logout_new_wh') }}" class="btn btn-danger btn-xs ">Odjava</a>
 					</p></div>
 				
-					{!! Form::open(['method'=>'POST', 'url'=>'operator_login_new_post_kik']) !!}
+					{!! Form::open(['method'=>'POST', 'url'=>'/operator_logout_new_post_wh']) !!}
 
 						<div class="panel-body">
-							<p>Izabrati aktivnost:</p>
-						<select name="activity" class="form-control" class="autofocus">
-		                	<!-- <option value="0"></option> -->
-		                    @foreach ($activity as $line)
-		                    <option value="{{ $line->id }}">{{ $line->activity_desc }}</option>
-		                    @endforeach
+							<p>Izabrati razlog odjave:</p>
+						<select name="logout_motivation" class="form-control" class="autofocus">
+		                	<option value="0"></option>
+		                   	<option value="Leave from work">Odlazak sa posla</option>
+		                   	<option value="Move to other">Premestanje u drugi departman</option>
+		                   	
+		                   	
 		                </select>
 		            	</div>
 
@@ -36,10 +37,10 @@
 						@include('errors.list')
 
 					{!! Form::close() !!}
-
+						
 						<hr>
-		                 
-		              
+
+		                
 
 		                @if (isset($msg3))
 		                <div class="panel-body">
@@ -52,6 +53,7 @@
 		                   <p style="color:green;"><b>{{ $msg4 }}</b></p>
 		                </div>
 		                @endif
+				
 		</div>
 	</div>
 </div>

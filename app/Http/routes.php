@@ -36,6 +36,15 @@ Route::get('operator_logout_new_kik', 'OperatorLoginController@logout_kik');
 Route::post('operator_logout_new_post_kik','OperatorLoginController@operator_logout_new_post_kik');
 Route::get('table_operator_new_kik', 'OperatorLoginController@table_operator_new_kik');
 
+Route::get('operator_login_new_wh', 'OperatorLoginController@login_wh');
+Route::post('operator_login_new_post_wh','OperatorLoginController@operator_login_new_post_wh');
+Route::get('operator_change_new_wh', 'OperatorLoginController@change_wh');
+Route::post('operator_change_new_post_wh','OperatorLoginController@operator_change_new_post_wh');
+Route::get('operator_logout_new_wh', 'OperatorLoginController@logout_wh');
+Route::post('operator_logout_new_post_wh','OperatorLoginController@operator_logout_new_post_wh');
+Route::get('table_operator_new_wh', 'OperatorLoginController@table_operator_new_wh');
+
+
 // LoginPreproductionController
 Route::get('preproduction_login', 'LoginPreproductionController@preproduction_login');
 Route::post('preproduction_login_post','LoginPreproductionController@preproduction_login_post');
@@ -59,6 +68,12 @@ Route::post('insert_activity', 'ActivityController@insert_activity');
 Route::get('activity_kik', 'ActivityController@index_kik');
 Route::get('add_activity_kik','ActivityController@add_activity_kik');
 Route::post('insert_activity_kik', 'ActivityController@insert_activity_kik');
+
+Route::get('activity_wh', 'ActivityController@index_wh');
+Route::get('add_activity_wh','ActivityController@add_activity_wh');
+Route::post('insert_activity_wh', 'ActivityController@insert_activity_wh');
+
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

@@ -5,7 +5,7 @@
 	<div class="row vertical-center-row">
 		<div class="text-center col-md-5 col-md-offset-4">
 			<div class="panel panel-default">
-				<div class="panel-heading" style="background-color: #b8ffb3;"><span style="color:blue">Activity table (KIK)</span></div>
+				<div class="panel-heading" style="background-color: #b8ffb3;"><span style="color:green">Activity table Prepproducion (KIK)</span></div>
 
 				
 					<a href="{{ url('add_activity_kik') }}" class="btn btn-info btn-xs ">Add new activity</a>
