@@ -13,10 +13,18 @@ class Change extends Migration {
 	public function up()
 	{
 		//
-		Schema::table('login_preproductions', function(Blueprint $table)
-		{
-			// $table->integer('downtime')->nullable(); // Added
-		});
+		// Schema::table('operator_logins', function(Blueprint $table)
+		// {
+		// 	// $table->string('department')->nullable(); // Added
+		// 	$table->string('department')->nullable()->change();
+		// });
+		  	// Schema::table('operator_logins', function (Blueprint $table) {
+		   //      $table->dropColumn('department');
+		   //  });
+
+		   //  Schema::table('operator_logins', function (Blueprint $table) {
+		   //      $table->string('department')->nullable();
+		   //  });
 	}
 
 	/**

@@ -2,64 +2,86 @@
 
 @section('content')
 <div class="container">
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<!-- <div class="panel panel-default"> -->
-				<!-- <div class="panel-heading">Wellcome to login operator application</div> -->
-			<!-- </div> -->
-			
-			<div class="panel panel-default" >
-				<div class="panel-heading" style="background-color: #f3afaf !important"><span style="color:red">Preproduction (SU) operator login</span></div>
+    <div class="row">
+        <!-- Left column -->
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #f3afaf !important">
+                    <span style="color:red">Preproduction (SU) operator login</span>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url('preproduction_login') }}"><span style="color:red">Prijava / LogIN</span></a></li>
+                        <li><a href="{{ url('preproduction_logout') }}"><span style="color:red">Odjava / LogOUT</span></a></li>
+                        <li><a href="{{ url('table_preproduction') }}"><span style="color:red">Tabela registracija</span></a></li>
+                    </ul>
+                </div>
+            </div>
 
-				<div class="panel-body">
-					<li><a href="{{ url('preproduction_login') }}"><span style="color:red">Prijava / LogIN</span></a></li>
-					<li><a href="{{ url('preproduction_logout') }}"><span style="color:red">Odjava / LogOUT</span></a></li>
-					<li><a href="{{ url('table_preproduction') }}"><span style="color:red">Tabela registracija</span></a></li>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading" style="background-color: #b3b5ff !important"><span style="color:blue">Cutting (SU) operator login</div>
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #b8ffb3 !important">
+                    <span style="color:green">Preproduction (KIK) operator login</span>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url('operator_login_new_kik') }}"><span style="color:#31b0d5">Prijava / Log IN</span></a></li>
+                        <!-- <li><a href="{{ url('operator_change_new_kik') }}"><span style="color:#f0ad4e">Promena aktivnosti / Change activity</span></a></li> -->
+                        <li><a href="{{ url('operator_logout_new_kik') }}"><span style="color:#c9302c">Odjava / Log OUT</span></a></li>
+                        <li><a href="{{ url('activity_kik') }}"><span style="color:blue">Tabela aktivnosti</span></a></li>
+                        <li><a href="{{ url('table_operator_new_kik') }}"><span style="color:blue">Tabela aktivnih registracija</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-				<div class="panel-body">
-					
-					<li><a href="{{ url('operator_login_new') }}"><span style="color:#31b0d5">Prijava / Log IN</span></a></li>
-					<li><a href="{{ url('operator_change_new') }}"><span style="color:#f0ad4e">Promena aktivnosti / Change activity</span></a></li>
-					<li><a href="{{ url('operator_logout_new') }}"><span style="color:#c9302c">Odjava / Log OUT</span></a></li>
-					<li role="separator" class="divider"></li>
-					<li><a href="{{ url('activity') }}"><span style="color:blue">Tabela aktivnosti</span></a></li>
-					<li><a href="{{ url('table_operator_new') }}"><span style="color:blue">Tabela aktivnih registracija</span></a></li>
-								
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading" style="background-color: #b8ffb3 !important"><span style="color:green">Preproduction (KIK) operator login</div>
+        <!-- Right column -->
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #b3b5ff !important">
+                    <span style="color:blue">Cutting (SU) operator login</span>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url('operator_login_new') }}"><span style="color:#31b0d5">Prijava / Log IN</span></a></li>
+                        <li><a href="{{ url('operator_change_new') }}"><span style="color:#f0ad4e">Promena aktivnosti / Change activity</span></a></li>
+                        <li><a href="{{ url('operator_logout_new') }}"><span style="color:#c9302c">Odjava / Log OUT</span></a></li>
+                        <li><a href="{{ url('activity') }}"><span style="color:blue">Tabela aktivnosti</span></a></li>
+                        <li><a href="{{ url('table_operator_new') }}"><span style="color:blue">Tabela aktivnih registracija</span></a></li>
+                        <li><a href="{{ url('cutting_department') }}"><span style="color:black">Cutting Department Employees</span></a></li>
+                    </ul>
+                </div>
+            </div>
 
-				<div class="panel-body">
-					
-					<li><a href="{{ url('operator_login_new_kik') }}"><span style="color:#31b0d5">Prijava / Log IN</span></a></li>
-					<!-- <li><a href="{{ url('operator_change_new_kik') }}"><span style="color:#f0ad4e">Promena aktivnosti / Change activity</span></a></li> -->
-					<li><a href="{{ url('operator_logout_new_kik') }}"><span style="color:#c9302c">Odjava / Log OUT</span></a></li>
-					<li role="separator" class="divider"></li>
-					<li><a href="{{ url('activity_kik') }}"><span style="color:blue">Tabela aktivnosti</span></a></li>
-					<li><a href="{{ url('table_operator_new_kik') }}"><span style="color:blue">Tabela aktivnih registracija</span></a></li>
-								
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading" style="background-color: Aqua !important"><span style="color:blue">Warehouse (SU) operator login</div>
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: Aqua !important">
+                    <span style="color:blue">Warehouse (SU) operator login</span>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url('operator_login_new_wh') }}"><span style="color:#31b0d5">Prijava / Log IN</span></a></li>
+                        <li><a href="{{ url('operator_change_new_wh') }}"><span style="color:#f0ad4e">Promena aktivnosti / Change activity</span></a></li>
+                        <li><a href="{{ url('operator_logout_new_wh') }}"><span style="color:#c9302c">Odjava / Log OUT</span></a></li>
+                        <li><a href="{{ url('activity_wh') }}"><span style="color:blue">Tabela aktivnosti</span></a></li>
+                        <li><a href="{{ url('table_operator_new_wh') }}"><span style="color:blue">Tabela aktivnih registracija</span></a></li>
+                    </ul>
+                </div>
+            </div>
 
-				<div class="panel-body">
-					
-					<li><a href="{{ url('operator_login_new_wh') }}"><span style="color:#31b0d5">Prijava / Log IN</span></a></li>
-					<li><a href="{{ url('operator_change_new_wh') }}"><span style="color:#f0ad4e">Promena aktivnosti / Change activity</span></a></li>
-					<li><a href="{{ url('operator_logout_new_wh') }}"><span style="color:#c9302c">Odjava / Log OUT</span></a></li>
-					<li role="separator" class="divider"></li>
-					<li><a href="{{ url('activity_wh') }}"><span style="color:blue">Tabela aktivnosti</span></a></li>
-					<li><a href="{{ url('table_operator_new_wh') }}"><span style="color:blue">Tabela aktivnih registracija</span></a></li>
-								
-				</div>
-			</div>
-		</div>
-	</div>
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: orange !important">
+                    <span style="color:blue">Bonding (SU) operator login</span>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url('operator_login_new_bon') }}"><span style="color:#31b0d5">Prijava / Log IN</span></a></li>
+                        <li><a href="{{ url('operator_change_new_bon') }}"><span style="color:#f0ad4e">Promena aktivnosti / Change activity</span></a></li>
+                        <li><a href="{{ url('operator_logout_new_bon') }}"><span style="color:#c9302c">Odjava / Log OUT</span></a></li>
+                        <li><a href="{{ url('activity_bon') }}"><span style="color:blue">Tabela aktivnosti</span></a></li>
+                        <li><a href="{{ url('table_operator_new_bon') }}"><span style="color:blue">Tabela aktivnih registracija</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

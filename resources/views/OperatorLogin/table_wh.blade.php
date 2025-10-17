@@ -5,7 +5,6 @@
 	<div class="row vertical-center-row">
 		<div class="text-center col-md-8 col-md-offset-2">
 			<div class="panel panel-default"> 
-				<!-- <div class="panel-heading" style="background-color: #b3f700;"><span style="color:blue">Tabela Preproduction (KIK) registracija (prikazano poslednjih 30 dana) </span></div> -->
 				<div class="panel-heading" style="background-color: Aqua"><span style="color:blue">Tabela Warehouse (SU) registracija (prikazano poslednjih 30 dana)</span></div>
 				
 				<br>

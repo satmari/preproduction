@@ -3,15 +3,17 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row vertical-center-row">
-		<div class="text-center col-md-8 col-md-offset-2">
-			<div class="panel panel-default"> 
-				<div class="panel-heading" style="background-color: #b8ffb3;"><span style="color:green">Tabela Preproduction (KIK) registracija (prikazano poslednjih 30 dana)</span></div>
+		<div class="text-center col-md-5 col-md-offset-4">
+			<div class="panel panel-default">
+				<div class="panel-heading" style="background-color: orange;"><span style="color:blue">Activity table (Bonding SU)</span></div>
+
 				
-				<br>
+					<a href="{{ url('add_activity_bon') }}" class="btn btn-info btn-xs ">Add new activity</a>
+				
+
                 <div class="input-group"> <span class="input-group-addon">Filter</span>
                     <input id="filter" type="text" class="form-control" placeholder="Type here...">
                 </div>
-
                 <table class="table table-striped table-bordered" id="sort" 
                 data-show-export="true"
                 data-export-types="['excel']"
@@ -41,20 +43,11 @@
 				    <thead>
 				        <tr>
 				           {{-- <th>id</th> --}}
-				           <th data-sortable="true">Datum prijave</th>
-				           <th data-sortable="true">Smena</th>
 				           
-				           <th data-sortable="true">R Number</th>
-				           <th >Operater</th>
-				           <th data-sortable="true">Aktivnost</th>	
-				           <th>Vreme prijave</th>
-				           <th>Vreme odjave</th>
-				           <th>Razlog ili nacin odjave</th>
-
-				           <th data-sortable="true">od</th>
-				           <th data-sortable="true">do</th>
-
-				           
+				           <th>Activity</th>
+				           <th>Activity [EN]</th>
+				           				           
+				          
 				        </tr>
 				    </thead>
 				    <tbody class="searchable">
@@ -63,22 +56,11 @@
 				    	
 				        <tr>
 				        	{{-- <td>{{ $d->id }}</td> --}}
-				        	<td>{{ substr($d->login_date,0,10) }}</td>
-				        	<td>{{ $d->shift_name }}</td>
 				        	
-				        	<td>{{ $d->rnumber }}</td>
-				        	<td>{{ $d->operator }}</td>
-				        	<td>{{ $d->activity_desc}}</td>
-
-				        	<td>{{ substr($d->login_actual,0,19) }}</td>
-				        	<td>{{ substr($d->logout_actual,0,19) }}</td>
-
-				        	<td>{{ $d->logout_motivation}}</td>
-
-				        	<td>{{ substr($d->shift_start,11,5) }}</td>
-				        	<td>{{ substr($d->shift_end,  11,5) }}</td>
-
-
+				        	<td>{{ $d->activity_desc }} </td>
+				        	<td>{{ $d->activity_desc1 }} </td>
+				        					        	
+				        	
 						</tr>
 				    
 				    @endforeach

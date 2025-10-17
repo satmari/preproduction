@@ -17,25 +17,18 @@ class CreateOperatorLoginsTable extends Migration {
 			$table->increments('id');
 
 			$table->string('key_string');
-
 			$table->string('rnumber');
 			$table->string('operator');
-
 			$table->string('activity_id');
-
 			$table->dateTime('login_date');
-			
 			$table->dateTime('login_actual');
 			$table->dateTime('shift_start');
-
 			$table->dateTime('logout_actual')->nullable();
 			$table->dateTime('shift_end')->nullable();
-
 			$table->string('shift_name');
-
 			$table->string('logout_motivation')->nullable();
 
-			
+			$table->string('department')->nullable();
 			
 			$table->timestamps();
 		});

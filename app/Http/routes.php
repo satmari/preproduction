@@ -44,6 +44,14 @@ Route::get('operator_logout_new_wh', 'OperatorLoginController@logout_wh');
 Route::post('operator_logout_new_post_wh','OperatorLoginController@operator_logout_new_post_wh');
 Route::get('table_operator_new_wh', 'OperatorLoginController@table_operator_new_wh');
 
+Route::get('operator_login_new_bon', 'OperatorLoginController@login_bon');
+Route::post('operator_login_new_post_bon','OperatorLoginController@operator_login_new_post_bon');
+Route::get('operator_change_new_bon', 'OperatorLoginController@change_bon');
+Route::post('operator_change_new_post_bon','OperatorLoginController@operator_change_new_post_bon');
+Route::get('operator_logout_new_bon', 'OperatorLoginController@logout_bon');
+Route::post('operator_logout_new_post_bon','OperatorLoginController@operator_logout_new_post_bon');
+Route::get('table_operator_new_bon', 'OperatorLoginController@table_operator_new_bon');
+
 
 // LoginPreproductionController
 Route::get('preproduction_login', 'LoginPreproductionController@preproduction_login');
@@ -73,6 +81,21 @@ Route::get('activity_wh', 'ActivityController@index_wh');
 Route::get('add_activity_wh','ActivityController@add_activity_wh');
 Route::post('insert_activity_wh', 'ActivityController@insert_activity_wh');
 
+Route::get('activity_bon', 'ActivityController@index_bon');
+Route::get('add_activity_bon','ActivityController@add_activity_bon');
+Route::post('insert_activity_bon', 'ActivityController@insert_activity_bon');
+
+// Cutting department 
+Route::get('cutting_department', 'cutting_departmentController@index');
+
+Route::get('new_cutting_department_operator', 'cutting_departmentController@new_cutting_department_operator');
+Route::post('new_cutting_department_operator_post', 'cutting_departmentController@new_cutting_department_operator_post');
+
+Route::get('cutting_department_operator_edit/{id}', 'cutting_departmentController@cutting_department_operator_edit');
+Route::post('edit_cutting_department_operator_post', 'cutting_departmentController@edit_cutting_department_operator_post');
+
+Route::get('cutting_department_operator_delete/{id}', 'cutting_departmentController@cutting_department_operator_delete');
+Route::post('cutting_department_operator_delete_id', 'cutting_departmentController@cutting_department_operator_delete_id');
 
 
 Route::controllers([

@@ -17,15 +17,11 @@ class CreateLoginPreproductionsTable extends Migration {
 			$table->increments('id');
 
 			$table->string('key')->unique();
-
 			$table->string('rnumber');
 			$table->string('operator');
-			
 			$table->string('shift');
-
 			$table->dateTime('login_date');
 			$table->dateTime('logout_date')->nullable();
-
 			$table->double('total_time')->nullable();
 			$table->integer('break')->nullable();
 			

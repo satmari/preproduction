@@ -12,13 +12,14 @@ use App\login_operator;
 use App\activity;
 use App\activity_kik;
 use App\activity_wh;
+use App\activity_bon;
+
 use DB;
 
 class ActivityController extends Controller {
 
-	public function index()
-	{
-		//
+// Cutting
+	public function index() {
 		// dd("test");
 
 		$data = DB::connection('sqlsrv')->select(DB::raw("SELECT * FROM activity ORDER BY id"));
@@ -51,13 +52,11 @@ class ActivityController extends Controller {
 		}
 
 		return Redirect::to('/activity');
-
-
 	}
 
-	public function index_kik()
-	{
-		//
+// Kikinda
+
+	public function index_kik() {
 		// dd("test");
 
 		$data = DB::connection('sqlsrv')->select(DB::raw("SELECT * FROM activity_kik ORDER BY id"));
@@ -90,13 +89,11 @@ class ActivityController extends Controller {
 		}
 
 		return Redirect::to('/activity_kik');
-
-
 	}
 
-	public function index_wh()
-	{
-		//
+// Warehouse
+
+	public function index_wh() {
 		// dd("test");
 
 		$data = DB::connection('sqlsrv')->select(DB::raw("SELECT * FROM activity_wh ORDER BY id"));
@@ -129,8 +126,44 @@ class ActivityController extends Controller {
 		}
 
 		return Redirect::to('/activity_wh');
+	}
 
+// Bonding
 
+	public function index_bon() {
+		// dd("test");
+
+		$data = DB::connection('sqlsrv')->select(DB::raw("SELECT * 
+			FROM activity_bon ORDER BY id"));
+		return view('Activity.index_bon', compact('data'));
+	}
+
+	public function add_activity_bon () {
+		//
+		// dd("test");
+		return view('Activity.add_activity_bon');
+	}
+
+	public function insert_activity_bon (Request $request) {
+		
+		//
+		$this->validate($request, ['activity_desc' => 'required']);
+		$input = $request->all();
+		
+		try {
+			$table = new activity_bon;
+
+			$table->activity_desc = $input['activity_desc'];
+			$table->activity_desc1 = $input['activity_desc1'];
+									
+			$table->save();
+		}
+		catch (\Illuminate\Database\QueryException $e) {
+			$msg = "Problem to save in activity table";
+			return view('Activity.error_bon',compact('msg'));
+		}
+
+		return Redirect::to('/activity_bon');
 	}
 
 }

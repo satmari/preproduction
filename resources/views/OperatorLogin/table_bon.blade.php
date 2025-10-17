@@ -5,7 +5,7 @@
 	<div class="row vertical-center-row">
 		<div class="text-center col-md-8 col-md-offset-2">
 			<div class="panel panel-default"> 
-				<div class="panel-heading" style="background-color: #b8ffb3;"><span style="color:green">Tabela Preproduction (KIK) registracija (prikazano poslednjih 30 dana)</span></div>
+				<div class="panel-heading" style="background-color: orange"><span style="color:blue">Tabela Bonding (SU) registracija (prikazano poslednjih 30 dana)</span></div>
 				
 				<br>
                 <div class="input-group"> <span class="input-group-addon">Filter</span>

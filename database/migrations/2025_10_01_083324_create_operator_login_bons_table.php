@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOperatorLoginWhsTable extends Migration {
+class CreateOperatorLoginBonsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,10 @@ class CreateOperatorLoginWhsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('operator_login_wh', function(Blueprint $table)
+		Schema::create('operator_login_bon', function(Blueprint $table)
 		{
 			$table->increments('id');
-
+			
 			$table->string('key_string');
 			$table->string('rnumber');
 			$table->string('operator');
@@ -27,7 +27,7 @@ class CreateOperatorLoginWhsTable extends Migration {
 			$table->dateTime('shift_end')->nullable();
 			$table->string('shift_name');
 			$table->string('logout_motivation')->nullable();
-
+			
 			$table->timestamps();
 		});
 	}
@@ -39,7 +39,7 @@ class CreateOperatorLoginWhsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('operator_login_wh');
+		Schema::drop('operator_login_bons');
 	}
 
 }

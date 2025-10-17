@@ -9,6 +9,7 @@
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 	<!-- <link href="{{ asset('/css/css.css') }}" rel="stylesheet"> -->
 	<!-- <link href="{{ asset('/css/custom.css') }}" rel="stylesheet"> -->
+	<link href="{{ asset('/css/choosen.css') }}" rel='stylesheet' type='text/css'>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -54,6 +55,8 @@
 							<li><a href="{{ url('activity') }}"><span style="color:blue">Tabela aktivnosti (SU)</span></a></li>
 							<li role="separator" class="divider"></li>
 							<li><a href="{{ url('table_operator_new') }}"><span style="color:blue">Tabela aktivnih registracija (SU)</span></a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="{{ url('cutting_department') }}"><span style="color:black">Cutting Department Employees</span></a></li>
 
 						</ul>
 					</li>
@@ -96,6 +99,20 @@
 						</ul>
 					</li>
 					<a class="navbar-brand" href="#">|</a>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							<span class="" style="color:orange"><big><b>Bonding (SU)&nbsp;&nbsp;&nbsp;</b></big></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="{{ url('operator_login_new_bon') }}"><span style="color:#31b0d5">Prijava / Log IN (Bonding SU)</span></a></li>
+							<li><a href="{{ url('operator_change_new_bon') }}"><span style="color:#f0ad4e">Promena aktivnosti / Change activity (Bonding SU)</span></a></li>
+							<li><a href="{{ url('operator_logout_new_bon') }}"><span style="color:#c9302c">Odjava / Log OUT (Bonding SU)</span></a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="{{ url('activity_bon') }}"><span style="color:blue">Tabela aktivnosti (Bonding SU)</span></a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="{{ url('table_operator_new_bon') }}"><span style="color:blue">Tabela aktivnih registracija (Bonding SU)</span></a></li>
+						</ul>
+					</li>
+					<a class="navbar-brand" href="#">|</a>
 					
 					
 				</ul>
@@ -134,6 +151,7 @@
 	<!--<script src="{{ asset('/js/jspdf.min.js') }}" type="text/javascript" ></script>-->
 	<script src="{{ asset('/js/FileSaver.min.js') }}" type="text/javascript" ></script>
 	<script src="{{ asset('/js/bootstrap-table-export.js') }}" type="text/javascript" ></script>
+	<script src="{{ asset('/js/choosen.js') }}" type="text/javascript" ></script>
 
 	<script type="text/javascript">
 $(function() {
@@ -173,6 +191,8 @@ $(function() {
 	$('#sort').bootstrapTable({
     	
 	});
+
+	$(".chosen").chosen();
 
 	//$('.table tr').each(function(){
   		
