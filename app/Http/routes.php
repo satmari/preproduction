@@ -52,6 +52,14 @@ Route::get('operator_logout_new_bon', 'OperatorLoginController@logout_bon');
 Route::post('operator_logout_new_post_bon','OperatorLoginController@operator_logout_new_post_bon');
 Route::get('table_operator_new_bon', 'OperatorLoginController@table_operator_new_bon');
 
+Route::get('operator_login_new_secs', 'OperatorLoginController@login_secs');
+Route::post('operator_login_new_post_secs','OperatorLoginController@operator_login_new_post_secs');
+Route::get('operator_change_new_secs', 'OperatorLoginController@change_secs');
+Route::post('operator_change_new_post_secs','OperatorLoginController@operator_change_new_post_secs');
+Route::get('operator_logout_new_secs', 'OperatorLoginController@logout_secs');
+Route::post('operator_logout_new_post_secs','OperatorLoginController@operator_logout_new_post_secs');
+Route::get('table_operator_new_secs', 'OperatorLoginController@table_operator_new_secs');
+
 
 // LoginPreproductionController
 Route::get('preproduction_login', 'LoginPreproductionController@preproduction_login');
@@ -84,6 +92,10 @@ Route::post('insert_activity_wh', 'ActivityController@insert_activity_wh');
 Route::get('activity_bon', 'ActivityController@index_bon');
 Route::get('add_activity_bon','ActivityController@add_activity_bon');
 Route::post('insert_activity_bon', 'ActivityController@insert_activity_bon');
+
+Route::get('activity_secs', 'ActivityController@index_secs');
+Route::get('add_activity_secs','ActivityController@add_activity_secs');
+Route::post('insert_activity_secs', 'ActivityController@insert_activity_secs');
 
 // Cutting department 
 Route::get('cutting_department', 'cutting_departmentController@index');

@@ -113,6 +113,20 @@
 						</ul>
 					</li>
 					<a class="navbar-brand" href="#">|</a>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							<span class="" style="color:fuchsia"><big><b>Second Q (Audit)&nbsp;&nbsp;&nbsp;</b></big></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="{{ url('operator_login_new_secs') }}"><span style="color:#31b0d5">Prijava / Log IN (SecondQ SU)</span></a></li>
+							<li><a href="{{ url('operator_change_new_secs') }}"><span style="color:#f0ad4e">Promena aktivnosti / Change activity (SecondQ SU)</span></a></li>
+							<li><a href="{{ url('operator_logout_new_secs') }}"><span style="color:#c9302c">Odjava / Log OUT (SecondQ SU)</span></a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="{{ url('activity_secs') }}"><span style="color:blue">Tabela aktivnosti (SecondQ SU)</span></a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="{{ url('table_operator_new_secs') }}"><span style="color:blue">Tabela aktivnih registracija (SecondQ SU)</span></a></li>
+						</ul>
+					</li>
+					<a class="navbar-brand" href="#">|</a>
 					
 					
 				</ul>

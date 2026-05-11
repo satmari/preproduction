@@ -32,6 +32,21 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: fuchsia !important">
+                    <span style="color:white">Second Quality Audit (SU) operator login</span>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url('operator_login_new_secs') }}"><span style="color:#31b0d5">Prijava / Log IN</span></a></li>
+                        <li><a href="{{ url('operator_change_new_secs') }}"><span style="color:#f0ad4e">Promena aktivnosti / Change activity</span></a></li>
+                        <li><a href="{{ url('operator_logout_new_secs') }}"><span style="color:#c9302c">Odjava / Log OUT</span></a></li>
+                        <li><a href="{{ url('activity_secs') }}"><span style="color:blue">Tabela aktivnosti</span></a></li>
+                        <li><a href="{{ url('table_operator_new_secs') }}"><span style="color:blue">Tabela aktivnih registracija</span></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <!-- Right column -->
@@ -81,6 +96,8 @@
                     </ul>
                 </div>
             </div>
+
+
         </div>
     </div>
 </div>

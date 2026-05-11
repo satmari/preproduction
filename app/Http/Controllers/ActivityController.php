@@ -13,6 +13,7 @@ use App\activity;
 use App\activity_kik;
 use App\activity_wh;
 use App\activity_bon;
+use App\activity_sec;
 
 use DB;
 
@@ -164,6 +165,44 @@ class ActivityController extends Controller {
 		}
 
 		return Redirect::to('/activity_bon');
+	}
+
+
+// SecondQ
+
+	public function index_secs() {
+		// dd("test");
+
+		$data = DB::connection('sqlsrv')->select(DB::raw("SELECT * FROM activity_secs ORDER BY id"));
+		return view('Activity.index_secs', compact('data'));
+	}
+
+	public function add_activity_secs () {
+		//
+		// dd("test");
+		return view('Activity.add_activity_secs');
+	}
+
+	public function insert_activity_secs (Request $request) {
+		
+		//
+		$this->validate($request, ['activity_desc' => 'required']);
+		$input = $request->all();
+		
+		try {
+			$table = new activity_sec;
+
+			$table->activity_desc = $input['activity_desc'];
+			$table->activity_desc1 = $input['activity_desc1'];
+									
+			$table->save();
+		}
+		catch (\Illuminate\Database\QueryException $e) {
+			$msg = "Problem to save in activity table";
+			return view('Activity.error_secs',compact('msg'));
+		}
+
+		return Redirect::to('/activity_secs');
 	}
 
 }
